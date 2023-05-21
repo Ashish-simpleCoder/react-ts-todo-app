@@ -48,14 +48,14 @@ export default function TodoPage() {
                   as='h1'
                   flex='1'
                   size={['md']}
-                  display={['none', 'none', 'flex']}
+                  display={['none', 'flex']}
                   alignItems={'center'}
                   fontFamily={'cursive'}
                   gap='2'
                >
                   <PajamasTodoDone /> Todo App
                </Heading>
-               <Heading as='h1' flex='1' size={['md', 'lg']} display={['block', 'block', 'none']}>
+               <Heading as='h1' flex='1' size={['md', 'lg']} display={['block', 'none']}>
                   <PajamasTodoDone />
                </Heading>
                {todos.length !== 0 && (
