@@ -62,7 +62,7 @@ export default function TodoPage() {
                   <SearchBar
                      handleSearchInput={handleSearchInput}
                      searchShortcut={
-                        <Box>
+                        <Box display={['none', 'block']}>
                            <span>Ctrl + K</span>
                         </Box>
                      }
