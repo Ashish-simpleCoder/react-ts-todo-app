@@ -1,10 +1,6 @@
 {
   "name": "react-ts-todo-app",
   "homepage": "https://ashish-simplecoder.github.io/react-ts-todo-app/",
-  "author": {
-    "email": "ashish.simpecoder@gmail.com",
-    "name": "Ashish-simpleCoder"
-  },
   "private": false,
   "version": "0.0.1",
   "type": "module",
