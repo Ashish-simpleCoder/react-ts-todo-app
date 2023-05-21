@@ -1,8 +1,11 @@
 name: CI
 on:
-   pull_request:
+   push:
       branches:
          - main
+
+permissions:
+   contents: write
 
 jobs:
    build:
@@ -30,3 +33,7 @@ jobs:
 
          - run: pnpm install --frozen-lockfile
          - run: pnpm run build
+         - name: Deploy 🚀
+           uses: JamesIves/github-pages-deploy-action@v4
+           with:
+              folder: dist # The folder the action should deploy.
