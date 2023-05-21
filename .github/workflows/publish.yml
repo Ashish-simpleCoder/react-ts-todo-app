@@ -18,6 +18,10 @@ jobs:
            with:
               node-version: ${{ matrix.node }}
               cache: 'pnpm'
-
          - run: pnpm install --frozen-lockfile
-         - run: pnpm build && pnpm gh-deploy
+         - run: pnpm build
+
+         - name: Deploy 🚀
+           uses: JamesIves/github-pages-deploy-action@v4
+           with:
+              folder: dist
