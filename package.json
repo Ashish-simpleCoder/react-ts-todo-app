@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "predeploy": "pnpm build",
-    "deploy": "gh-pages -d dist"
+    "gh-deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
