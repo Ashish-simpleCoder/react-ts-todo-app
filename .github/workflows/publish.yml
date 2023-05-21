@@ -5,6 +5,7 @@ on:
          - main
 permissions:
    contents: write
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
@@ -22,8 +23,8 @@ jobs:
          - run: pnpm install --frozen-lockfile
          - run: pnpm build
 
-         # - name: Deploy 🚀
-         #   uses: JamesIves/github-pages-deploy-action@v4
-         #   with:
-         #      folder: dist
-         - run: git config user.name "Ashish-simplCoder" && git config user.email "ashish.simplecoder@gmail.com" && pnpm build && pnpm gh-deploy
+         - name: Deploy 🚀
+           uses: JamesIves/github-pages-deploy-action@v4
+           with:
+              folder: dist
+         # - run: git config user.name "Ashish-simplCoder" && git config user.email "ashish.simplecoder@gmail.com" && pnpm build && pnpm gh-deploy
