@@ -7,9 +7,12 @@ export default function useCtrlKEventListener(callback: (e: KeyboardEvent) => vo
    const handleCtrlPlusK = (e: KeyboardEvent) => {
       if (e.key == 'Control' || e.key == 'k') {
          e.preventDefault()
-         keysRef.current = [...keysRef.current, e.key]
+         if (!keysRef.current.includes(e.key)) {
+            keysRef.current = [...keysRef.current, e.key]
+         }
          if (keysRef.current[0] == 'Control' && keysRef.current[1] == 'k') {
             callback(e)
+            keysRef.current = []
          }
       }
    }
