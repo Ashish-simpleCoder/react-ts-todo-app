@@ -11,27 +11,24 @@ const useTodo = () => {
 
    const toast = useToast()
 
-   const addTodo = useCallback(
-      (todo: string) => {
-         flushSync(() => {
-            dispatch(
-               TodoActions.ADD_TODO({
-                  id: Date.now().toString(),
-                  title: todo,
-                  check: false,
-               })
-            )
-         })
+   const addTodo = useCallback((todo: string) => {
+      flushSync(() => {
+         dispatch(
+            TodoActions.ADD_TODO({
+               id: Date.now().toString(),
+               title: todo,
+               check: false,
+            })
+         )
+      })
 
-         toast({
-            duration: 3000,
-            status: 'success',
-            title: 'Todo created successfully.',
-            isClosable: true,
-         })
-      },
-      [todos]
-   )
+      toast({
+         duration: 3000,
+         status: 'success',
+         title: 'Todo created successfully.',
+         isClosable: true,
+      })
+   }, [])
 
    const deleteTodo = useCallback((id: string) => {
       dispatch(TodoActions.REMOVE_TODO(id))
